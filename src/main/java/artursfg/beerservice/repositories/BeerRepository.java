@@ -1,6 +1,6 @@
 package artursfg.beerservice.repositories;
 
-import artursfg.beerservice.web.domain.Beer;
+import artursfg.beerservice.domain.Beer;
 import java.util.UUID;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
