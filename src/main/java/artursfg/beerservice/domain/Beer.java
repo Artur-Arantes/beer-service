@@ -1,4 +1,4 @@
-package artursfg.beerservice.web.domain;
+package artursfg.beerservice.domain;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;

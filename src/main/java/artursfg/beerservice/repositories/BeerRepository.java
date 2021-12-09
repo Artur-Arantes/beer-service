@@ -1,4 +1,4 @@
-package artursfg.beerservice.web.repositories;
+package artursfg.beerservice.repositories;
 
 import artursfg.beerservice.web.domain.Beer;
 import java.util.UUID;
