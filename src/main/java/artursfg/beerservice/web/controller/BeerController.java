@@ -5,6 +5,7 @@ import artursfg.beerservice.web.model.BeerDto;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,13 +23,13 @@ public class BeerController {
   }
 
   @PostMapping
-  public ResponseEntity saveNewBeer(@RequestBody BeerDto beerDto) {
+  public ResponseEntity saveNewBeer(@RequestBody @Validated BeerDto beerDto) {
     return new ResponseEntity(HttpStatus.CREATED);
   }
 
   @PutMapping("/{beerId}")
   public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId,
-                                       @RequestBody BeerDto beerDto) {
+                                      @Validated @RequestBody BeerDto beerDto) {
     return new ResponseEntity(HttpStatus.NO_CONTENT);
   }
 }
