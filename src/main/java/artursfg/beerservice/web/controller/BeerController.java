@@ -2,6 +2,7 @@ package artursfg.beerservice.web.controller;
 
 
 import artursfg.beerservice.web.model.BeerDto;
+import java.math.BigDecimal;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,8 @@ public class BeerController {
 
   @RequestMapping("/{beerId}")
   public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID Id) {
-    return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
+    return new ResponseEntity<>(BeerDto.builder().id(UUID.randomUUID()).upc(123123123123L)
+        .beerName("Brazilian Beer").price(new BigDecimal("25.99")).build(), HttpStatus.OK);
   }
 
   @PostMapping
@@ -29,7 +31,7 @@ public class BeerController {
 
   @PutMapping("/{beerId}")
   public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId,
-                                      @Validated @RequestBody BeerDto beerDto) {
+                                       @Validated @RequestBody BeerDto beerDto) {
     return new ResponseEntity(HttpStatus.NO_CONTENT);
   }
 }
