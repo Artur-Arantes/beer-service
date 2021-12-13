@@ -1,5 +1,6 @@
 package artursfg.beerservice.web.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -20,7 +21,10 @@ public class BeerDto {
 
   private Integer version;
 
+  @JsonFormat(pattern = "yyyy-mm-dd", shape = JsonFormat.Shape.STRING)
   private OffsetDateTime createdDate;
+
+  @JsonFormat(pattern = "yyyy-mm-dd", shape = JsonFormat.Shape.STRING)
   private OffsetDateTime lastModifiedDate;
 
   @NotBlank
@@ -32,6 +36,7 @@ public class BeerDto {
   private Long upc;
 
   @NonNull
+  @JsonFormat(shape = JsonFormat.Shape.STRING)
   private BigDecimal price;
 
 
